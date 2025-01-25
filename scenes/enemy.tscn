@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://byi7fd2uadkbx"]
+[gd_scene load_steps=5 format=3 uid="uid://byi7fd2uadkbx"]
 
 [ext_resource type="Script" path="res://scenes/enemy.gd" id="1_2b6ml"]
 [ext_resource type="Texture2D" uid="uid://8u2iadm38f7s" path="res://assets/spritesheet_default.png" id="1_6ejn7"]
+[ext_resource type="Script" path="res://scenes/health_component.gd" id="3_60n30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjo6b"]
 size = Vector2(78, 78)
@@ -17,4 +18,11 @@ region_rect = Rect2(176.278, 0.430679, 79.2872, 79.3063)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gjo6b")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." groups=["ENEMY"]]
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_60n30")
+MaxHealth = 20.0
+
+[connection signal="HealthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]
+[connection signal="OutOfHealth" from="HealthComponent" to="." method="_on_health_component_out_of_health"]

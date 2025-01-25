@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bav58jm6ngufw"]
+[gd_scene load_steps=6 format=3 uid="uid://bav58jm6ngufw"]
 
 [ext_resource type="PackedScene" uid="uid://dptslkx5dyuwg" path="res://scenes/player.tscn" id="1_7g0kt"]
 [ext_resource type="Texture2D" uid="uid://8u2iadm38f7s" path="res://assets/spritesheet_default.png" id="2_gf08b"]
 [ext_resource type="PackedScene" uid="uid://byi7fd2uadkbx" path="res://scenes/enemy.tscn" id="3_prv3j"]
+[ext_resource type="PackedScene" uid="uid://cbab2xbc45k3r" path="res://scenes/projectile.tscn" id="4_ae0xi"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ojwdi"]
 vertices = PackedVector2Array(1914.95, 1071.98, 7, 1069.01, 7, 10.9609, 1910.04, 4.03125)
@@ -25,3 +26,6 @@ navigation_polygon = SubResource("NavigationPolygon_ojwdi")
 
 [node name="enemy" parent="." instance=ExtResource("3_prv3j")]
 position = Vector2(320, 707)
+
+[node name="projectile" parent="." instance=ExtResource("4_ae0xi")]
+position = Vector2(629, 636)
