@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://byi7fd2uadkbx"]
+[gd_scene load_steps=6 format=3 uid="uid://byi7fd2uadkbx"]
 
 [ext_resource type="Script" path="res://scenes/enemy.gd" id="1_2b6ml"]
 [ext_resource type="Texture2D" uid="uid://8u2iadm38f7s" path="res://assets/spritesheet_default.png" id="1_6ejn7"]
+[ext_resource type="PackedScene" uid="uid://cbab2xbc45k3r" path="res://scenes/projectile.tscn" id="2_vv3do"]
 [ext_resource type="Script" path="res://scenes/health_component.gd" id="3_60n30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjo6b"]
 size = Vector2(78, 78)
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="enemy" type="CharacterBody2D" groups=["ENEMY"]]
 script = ExtResource("1_2b6ml")
+Projectile = ExtResource("2_vv3do")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_6ejn7")
@@ -23,6 +25,10 @@ shape = SubResource("RectangleShape2D_gjo6b")
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("3_60n30")
 MaxHealth = 20.0
+
+[node name="ProjectileCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="HealthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]
 [connection signal="OutOfHealth" from="HealthComponent" to="." method="_on_health_component_out_of_health"]

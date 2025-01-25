@@ -19,9 +19,6 @@ region_rect = Rect2(400.196, 79.9027, 79.8347, 79.8433)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yajck")
 
-[node name="ShieldTimer" type="Timer" parent="."]
-one_shot = true
-
 [node name="ShieldSprite" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(1.3, 1.3)
@@ -30,5 +27,15 @@ texture = ExtResource("3_f1b1g")
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("4_52g14")
 
+[node name="ShieldParryTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="SpeedBoostTimer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
 [connection signal="HealthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]
 [connection signal="OutOfHealth" from="HealthComponent" to="." method="_on_health_component_out_of_health"]
+[connection signal="timeout" from="ShieldParryTimer" to="." method="_on_shield_parry_timer_timeout"]
+[connection signal="timeout" from="SpeedBoostTimer" to="." method="_on_speed_boost_timer_timeout"]
