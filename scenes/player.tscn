@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dptslkx5dyuwg"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_8hjwu"]
+[ext_resource type="Texture2D" uid="uid://8u2iadm38f7s" path="res://assets/spritesheet_default.png" id="1_30htd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yajck"]
+radius = 38.0526
+
+[node name="player" type="CharacterBody2D" groups=["PLAYER"]]
+script = ExtResource("1_8hjwu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_30htd")
+region_enabled = true
+region_rect = Rect2(255.965, 0.151242, 79.8573, 79.6774)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yajck")
+
+[node name="ShieldTimer" type="Timer" parent="."]
+one_shot = true

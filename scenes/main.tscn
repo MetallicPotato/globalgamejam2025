@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bav58jm6ngufw"]
+
+[ext_resource type="PackedScene" uid="uid://dptslkx5dyuwg" path="res://scenes/player.tscn" id="1_7g0kt"]
+[ext_resource type="Texture2D" uid="uid://8u2iadm38f7s" path="res://assets/spritesheet_default.png" id="2_gf08b"]
+[ext_resource type="PackedScene" uid="uid://byi7fd2uadkbx" path="res://scenes/enemy.tscn" id="3_prv3j"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ojwdi"]
+vertices = PackedVector2Array(1914.95, 1071.98, 7, 1069.01, 7, 10.9609, 1910.04, 4.03125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-3, 1, -3, 1079, 1925, 1082, 1920, -6)])
+
+[node name="main" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_7g0kt")]
+position = Vector2(960, 540)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(925, 52)
+texture = ExtResource("2_gf08b")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_ojwdi")
+
+[node name="enemy" parent="." instance=ExtResource("3_prv3j")]
+position = Vector2(320, 707)
