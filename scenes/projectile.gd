@@ -8,17 +8,16 @@ var shouldmove: bool = false
 func _on_body_entered(body):
 	if body.is_in_group("PLAYER"):
 		if body.shielded:
-			print("Shielded!")
 			if body.canParry:
-				print("PARRY!!!")
 				direction = -direction
 				speed *= 1.5
-				body.speed_boost()
+				body.parry()
 			else:
+				body.noparry()
 				queue_free()
 		else:
-			print("Not Shielded!")
 			body.get_node("HealthComponent").damage(10.0)
+			body.noparry()
 			queue_free()
 	elif body.is_in_group("ENEMY"):
 		body.get_node("HealthComponent").damage(10.0)

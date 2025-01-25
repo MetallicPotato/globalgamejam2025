@@ -31,11 +31,6 @@ func _physics_process(_delta):
 			direction = direction.normalized()
 			velocity = direction * SPEED
 			move_and_slide()
-		#TODO: stop at certain distance to player and shoot projectile
-
 
 func _on_health_component_out_of_health():
 	queue_free()
-
-func _on_health_component_health_changed(newhealth):
-	print("Enemy Damaged!") #TODO: visualize damage

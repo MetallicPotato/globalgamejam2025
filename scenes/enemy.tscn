@@ -30,5 +30,4 @@ MaxHealth = 10.0
 wait_time = 2.0
 one_shot = true
 
-[connection signal="HealthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]
 [connection signal="OutOfHealth" from="HealthComponent" to="." method="_on_health_component_out_of_health"]
