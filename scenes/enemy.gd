@@ -18,7 +18,7 @@ func _physics_process(_delta):
 			if projectile_cooldown.is_stopped():
 				projectile_cooldown.start()
 				var p = Projectile.instantiate()
-				owner.add_child(p)
+				get_tree().root.add_child(p)
 				var pdirection = (global_position - player.global_position).normalized() * -1
 				p.position = (pdirection * 75) + global_position
 				p.set_direction(pdirection)
