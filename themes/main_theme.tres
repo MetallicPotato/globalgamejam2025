@@ -2,6 +2,8 @@
 
 [ext_resource type="StyleBox" uid="uid://bjvh6s6rh4nx5" path="res://themes/styles/button_stylebox.tres" id="1_n7ptc"]
 [ext_resource type="FontFile" uid="uid://bvwndcgxtc006" path="res://themes/Dongle-Regular.ttf" id="2_qqoj2"]
+[ext_resource type="StyleBox" uid="uid://tbjjlyftq1td" path="res://themes/styles/progress_bar_bg.tres" id="2_u2p6a"]
+[ext_resource type="StyleBox" uid="uid://jg3cccfxjj" path="res://themes/styles/progress_bar_fill.tres" id="3_4luj4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yko4f"]
 bg_color = Color(0.223529, 0.243137, 0.27451, 1)
@@ -38,26 +40,6 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jck45"]
-bg_color = Color(0.133333, 0.156863, 0.192157, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.352941, 0.380392, 0.423529, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_777mw"]
-bg_color = Color(0.351781, 0.378674, 0.421697, 1)
-border_color = Color(0.133333, 0.156863, 0.192157, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
 [resource]
 default_font = ExtResource("2_qqoj2")
 default_font_size = 32
@@ -69,5 +51,5 @@ Button/styles/hover = SubResource("StyleBoxFlat_gufht")
 Button/styles/normal = ExtResource("1_n7ptc")
 Button/styles/pressed = SubResource("StyleBoxFlat_wdgsk")
 ProgressBar/colors/font_color = Color(0.933333, 0.933333, 0.933333, 1)
-ProgressBar/styles/background = SubResource("StyleBoxFlat_jck45")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_777mw")
+ProgressBar/styles/background = ExtResource("2_u2p6a")
+ProgressBar/styles/fill = ExtResource("3_4luj4")

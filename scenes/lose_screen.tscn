@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c44ktnnr2nfyb"]
+[gd_scene load_steps=5 format=3 uid="uid://c44ktnnr2nfyb"]
 
 [ext_resource type="Script" path="res://scenes/lose_screen.gd" id="1_qhbpw"]
+[ext_resource type="PackedScene" uid="uid://bav58jm6ngufw" path="res://scenes/main.tscn" id="2_r7ilp"]
 
 [sub_resource type="Gradient" id="Gradient_xiomk"]
 interpolation_mode = 2
@@ -19,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qhbpw")
+PlayAgainLevel = ExtResource("2_r7ilp")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

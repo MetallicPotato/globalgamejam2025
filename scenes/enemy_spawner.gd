@@ -19,6 +19,10 @@ func _on_timer_timeout():
 	
 	numspawns += 1
 	
+	if numspawns >= 100:
+		spawn_timer.stop()
+		return
+	
 	if numspawns >= 20:
 		spawn_timer.wait_time = 1
 		if numspawns >= 40:

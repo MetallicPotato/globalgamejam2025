@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dptslkx5dyuwg"]
+[gd_scene load_steps=8 format=3 uid="uid://dptslkx5dyuwg"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_8hjwu"]
 [ext_resource type="Texture2D" uid="uid://8u2iadm38f7s" path="res://assets/spritesheet_default.png" id="1_30htd"]
@@ -7,6 +7,30 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yajck"]
 radius = 38.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nuxfs"]
+bg_color = Color(0.133333, 0.156863, 0.192157, 0.180392)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.133333, 0.156863, 0.192157, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dd68"]
+bg_color = Color(0.645852, 0.20648, 0.0611475, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.133333, 0.156863, 0.192157, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="player" type="CharacterBody2D" groups=["PLAYER"]]
 script = ExtResource("1_8hjwu")
@@ -37,6 +61,26 @@ one_shot = true
 
 [node name="ShieldCooldownTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -65.0
+offset_right = 68.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_nuxfs")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4dd68")
+value = 100.0
+show_percentage = false
 
 [connection signal="HealthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]
 [connection signal="OutOfHealth" from="HealthComponent" to="." method="_on_health_component_out_of_health"]

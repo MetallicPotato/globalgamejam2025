@@ -7,10 +7,15 @@ extends CharacterBody2D
 @onready var shield_timer = $ShieldParryTimer
 @onready var speed_timer = $SpeedBoostTimer
 @onready var shield_cooldown = $ShieldCooldownTimer
+@onready var health_component = $HealthComponent
+@onready var health_bar = $CanvasLayer/HealthBar
 
 var shielded: bool = false
 var canParry: bool = false
 var parries_in_a_row: int = 0
+
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("shield"):
@@ -38,6 +43,11 @@ func handle_shield(active: bool):
 
 func _on_health_component_health_changed(newhealth):
 	print(newhealth)
+	if newhealth == health_component.MaxHealth:
+		health_bar.visible = false
+	else:
+		health_bar.visible = true
+		health_bar.value = newhealth
 
 func _on_health_component_out_of_health():
 	get_tree().change_scene_to_file("res://scenes/lose_screen.tscn")

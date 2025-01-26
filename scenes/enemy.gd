@@ -31,6 +31,9 @@ func _physics_process(_delta):
 			direction = direction.normalized()
 			velocity = direction * SPEED
 			move_and_slide()
+	else:
+		queue_free()
 
 func _on_health_component_out_of_health():
+	Scoremanager.remove_enemy()
 	queue_free()
