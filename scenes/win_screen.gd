@@ -10,5 +10,5 @@ func _ready():
 func _on_button_pressed():
 	button_click.play()
 	await button_click.finished
-	Scoremanager.remaining_enemies = 100
+	Scoremanager.remaining_enemies = 50
 	get_tree().change_scene_to_packed(PlayAgainLevel)
