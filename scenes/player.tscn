@@ -1,12 +1,16 @@
-[gd_scene load_steps=60 format=3 uid="uid://dptslkx5dyuwg"]
+[gd_scene load_steps=69 format=3 uid="uid://dptslkx5dyuwg"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_8hjwu"]
 [ext_resource type="Texture2D" uid="uid://c5xtdhl65bexv" path="res://assets/player_idle_spritesheet.png" id="2_na5cs"]
-[ext_resource type="Texture2D" uid="uid://btjvhs2xjrvhr" path="res://assets/hole_start.png" id="3_f1b1g"]
 [ext_resource type="Texture2D" uid="uid://x2s4m38u5f4g" path="res://assets/player_run_spritesheet.png" id="3_jngsv"]
 [ext_resource type="Script" path="res://scenes/health_component.gd" id="4_52g14"]
+[ext_resource type="Texture2D" uid="uid://bgdduphppuh8b" path="res://assets/particles/circle_03.png" id="4_rkehx"]
 [ext_resource type="AudioStream" uid="uid://bbgoxsybo3lr5" path="res://assets/sounds/parry.wav" id="6_dcmto"]
 [ext_resource type="AudioStream" uid="uid://cmh774ajj1b7q" path="res://assets/sounds/shield_absorb.wav" id="7_nrovq"]
+[ext_resource type="Texture2D" uid="uid://bsuism8gjngpt" path="res://assets/particles/circle_02.png" id="8_atmgg"]
+[ext_resource type="Texture2D" uid="uid://dbp6c00hxmrib" path="res://assets/particles/circle_01.png" id="9_6kaec"]
+[ext_resource type="Texture2D" uid="uid://dhjny2imdcg1l" path="res://assets/particles/star_07.png" id="10_w0rdm"]
+[ext_resource type="Texture2D" uid="uid://bou4qmmxt2i5a" path="res://assets/particles/star_06.png" id="11_dxgu6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tp6w"]
 atlas = ExtResource("2_na5cs")
@@ -415,6 +419,158 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_q4rsm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_atmgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rkehx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6kaec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rkehx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rkehx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rkehx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rkehx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_atmgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rkehx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gmq5k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_w0rdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dxgu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w0rdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dxgu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w0rdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dxgu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w0rdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dxgu6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_jprq8"]
+resource_name = "parry"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParrySprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParrySprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.133333, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParrySprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_y78mh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParrySprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParrySprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParrySprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x2pse"]
+_data = {
+"RESET": SubResource("Animation_y78mh"),
+"parry": SubResource("Animation_jprq8")
+}
+
 [node name="player" type="CharacterBody2D" groups=["PLAYER"]]
 script = ExtResource("1_8hjwu")
 
@@ -430,8 +586,8 @@ shape = SubResource("CapsuleShape2D_x2qve")
 
 [node name="ShieldSprite" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("3_f1b1g")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_rkehx")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("4_52g14")
@@ -496,6 +652,23 @@ volume_db = -2.0
 
 [node name="shield_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_nrovq")
+
+[node name="ShieldAnim" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_q4rsm")
+autoplay = "default"
+frame_progress = 0.469926
+
+[node name="ParrySprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_gmq5k")
+frame_progress = 0.875251
+
+[node name="ParryAnim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x2pse")
+}
 
 [connection signal="HealthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]
 [connection signal="OutOfHealth" from="HealthComponent" to="." method="_on_health_component_out_of_health"]

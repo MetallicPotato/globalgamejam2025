@@ -8,4 +8,4 @@ func remove_enemy():
 	remaining_enemies -= 1
 	OnRemove.emit()
 	if remaining_enemies <= 0:
-		print("win!")
+		get_tree().change_scene_to_file("res://scenes/win_screen.tscn")

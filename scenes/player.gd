@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+signal OnParry
+
 @export var speed = 300.0
 
-@onready var shield_sprite = $ShieldSprite
+@onready var shield_sprite = $ShieldAnim
 @onready var collision_shape = $CollisionShape2D
 @onready var shield_timer = $ShieldParryTimer
 @onready var speed_timer = $SpeedBoostTimer
@@ -13,6 +15,8 @@ extends CharacterBody2D
 @onready var number_label = $CanvasLayer/NumberLabel
 @onready var parry_sound = $parry_sound
 @onready var shield_sound = $shield_sound
+@onready var parry_anim = $ParryAnim
+@onready var parry_sprite = $ParrySprite
 
 var shielded: bool = false
 var canParry: bool = false
@@ -23,6 +27,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Scoremanager.OnRemove.connect(on_enemy_removed)
 	number_label.text = str(Scoremanager.remaining_enemies)
+	parry_sprite.visible = false
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("shield"):
@@ -92,12 +97,14 @@ func _on_shield_parry_timer_timeout():
 	canParry = false
 
 func parry():
+	OnParry.emit()
 	if speed_timer.is_stopped():
 		speed *= 3
 		make_trail()
 		speed_timer.start()
 	parries_in_a_row += 1
 	parry_sound.play()
+	parry_anim.play("parry")
 	if parries_in_a_row >= 3:
 		print("3 in a row!")
 
