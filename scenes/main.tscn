@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bav58jm6ngufw"]
+[gd_scene load_steps=12 format=3 uid="uid://bav58jm6ngufw"]
 
 [ext_resource type="PackedScene" uid="uid://dptslkx5dyuwg" path="res://scenes/player.tscn" id="1_7g0kt"]
 [ext_resource type="PackedScene" uid="uid://tq62yuueklvf" path="res://scenes/enemy_spawner.tscn" id="2_ac8p2"]
+[ext_resource type="Texture2D" uid="uid://cd2d6bst3k4ah" path="res://assets/env_spritesheet.png" id="3_k71ho"]
+[ext_resource type="PackedScene" uid="uid://cs1lcgofq41wi" path="res://scenes/env/tree.tscn" id="4_4wica"]
+[ext_resource type="PackedScene" uid="uid://cmeaw4w3kb33q" path="res://scenes/env/tree2.tscn" id="5_nea0p"]
+[ext_resource type="PackedScene" uid="uid://d01v22ol5g3jn" path="res://scenes/env/rock.tscn" id="6_mspxi"]
+[ext_resource type="PackedScene" uid="uid://c37umc3ut8l33" path="res://scenes/env/rock2.tscn" id="7_owhcd"]
+[ext_resource type="PackedScene" uid="uid://b5edcuycptjii" path="res://scenes/env/log.tscn" id="8_ybb6a"]
+[ext_resource type="PackedScene" uid="uid://bobm43au8j58w" path="res://scenes/health_pickup.tscn" id="9_ul7s3"]
+[ext_resource type="AudioStream" uid="uid://dwls0yyf4x6ie" path="res://assets/sounds/level_music.wav" id="10_nx0nh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ojwdi"]
-vertices = PackedVector2Array(1914.95, 1071.98, 7, 1069.01, 7, 10.9609, 1910.04, 4.03125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-3, 1, -3, 1079, 1925, 1082, 1920, -6)])
+vertices = PackedVector2Array(2215.92, 71, 2572, -58.0234, 2621.49, -71.2734, 2205.62, 109.461, 2471, 732.141, 2443.56, 739.477, 699.328, 611, 685.102, 557.828, 1825.54, 899, 2443.56, 834.523, 2471, 841.859, 2490, 1164.08, 2451.54, 1174.38, 1817.7, 928.273, 2670.98, -157, 2905.98, -438.969, 2903.01, 1508, 2566.92, 1241, 2556.62, 1202.54, 2525.86, 787, 2657.73, -107.508, 2518.52, 814.438, 2528.46, 1174.38, 2518.52, 759.563, 2522.51, -71.2734, -122.078, 1171, -132.383, 1132.54, 2423.38, 1202.54, 774, 1183.08, -397.094, 709, 500.906, 664.172, 539.828, 703.102, -409.797, 756.461, 1582.16, 222.969, 1533.97, 271.156, 563.852, 215, 554.102, 178.57, 2498.44, 834.523, 2423.48, 759.563, 2423.48, 814.438, 2498.44, 739.477, 2657.73, -206.492, 1779.67, 337, 2177.46, 137.617, 1762.03, 402.844, 2556.62, 1279.46, 2486.27, -107.508, 2205.62, 32.5391, 500.906, 557.828, 486.672, 611, -65.1484, 570, -74.9063, 533.57, 1101.92, -129, 2473.02, -157, 1091.62, -90.5391, -409.797, 661.539, -138, 642.852, 1516.33, 337, 554.102, 251.43, 2416.14, 787, 685.102, 664.172, 1817.7, 869.727, 2621.49, -242.727, -74.9063, 606.43, 2528.46, 1307.62, 1091.62, -167.461, 2486.27, -206.492, 850.922, 1260, 840.617, 1221.54, 2413.08, 1241, 2423.38, 1279.46, 812.461, 1193.38, 840.617, 1298.46, 2451.54, 1307.62, 948.078, -129, -244.906, -103.57, -235.148, -140, 958.383, -167.461, 958.383, -90.5391, -271.57, -76.9063, -244.906, -176.43, 986.539, -195.617, 2177.46, 4.38281, 1533.97, 402.844, 527.43, 278.102, 1713.84, 451.031, 1796.27, 949.703, 1796.27, 848.297, 2572, -255.977, -828.039, -429.023, 2522.51, -242.727, 1025, -205.922, 646.172, 703.102, 1767, 840.461, 491, 287.852, 539.828, 518.906, -101.57, 506.906, 454.57, 278.102, 1063.46, -195.617, 986.539, -62.3828, 527.43, 151.906, 491, 142.148, -101.57, 633.102, -271.57, -203.102, 812.461, 1326.62, 1063.46, -62.3828, 2139, -5.92188, 2100.54, 4.38281, 1767, 957.539, -160.539, 1104.38, 1737.73, 949.703, 2490, 1317.92, -835.953, 1510.99, 774, 1336.92, 1025, -52.0781, 1648, 205.328, -444.539, 791.203, 593, 717.328, -199, 1094.08, -237.461, 1104.38, 1582.16, 451.031, 1648, 468.672, 646.172, 518.906, 593, 504.672, 427.906, 251.43, 418.148, 215, 427.906, 178.57, -138, 497.148, -308, -67.1484, 2072.38, 32.5391, 2062.08, 71, 2072.38, 109.461, 2100.54, 137.617, 1713.84, 222.969, 1716.3, 928.273, 1708.46, 899, 1716.3, 869.727, 1737.73, 848.297, 2139, 147.922, 1762.03, 271.156, 454.57, 151.906, -174.43, 506.906, -344.43, -76.9063, -201.102, 533.57, -371.102, -103.57, -492, 614.094, -210.852, 570, -444.539, 626.797, -265.617, 1132.54, -492, 803.906, -275.922, 1171, -539.461, 791.203, -265.617, 1209.46, -574.203, 756.461, -308, -212.852, -344.43, -203.102, -371.102, -176.43, -380.852, -140, -586.906, 709, -574.203, 661.539, 735.539, 1193.38, 707.383, 1221.54, 697.078, 1260, -132.383, 1209.46, 707.383, 1298.46, -160.539, 1237.62, -199, 1247.92, 735.539, 1326.62, -237.461, 1237.62, -539.461, 626.797, -201.102, 606.43, -174.43, 633.102)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17, 18, 19, 20), PackedInt32Array(21, 19, 18, 22), PackedInt32Array(20, 19, 23, 2), PackedInt32Array(24, 1, 0), PackedInt32Array(25, 26, 12, 27, 28), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(33, 34, 35, 36), PackedInt32Array(37, 21, 22, 11), PackedInt32Array(6, 5, 38), PackedInt32Array(39, 9, 8), PackedInt32Array(2, 23, 40), PackedInt32Array(15, 14, 41), PackedInt32Array(42, 43, 2, 40, 4, 44), PackedInt32Array(45, 17, 16), PackedInt32Array(46, 24, 0, 47), PackedInt32Array(10, 37, 11), PackedInt32Array(48, 49, 50, 51), PackedInt32Array(52, 53, 46, 54), PackedInt32Array(49, 30, 29, 55, 56), PackedInt32Array(35, 34, 57, 58), PackedInt32Array(6, 38, 59, 60), PackedInt32Array(59, 39, 8, 61), PackedInt32Array(15, 41, 62), PackedInt32Array(63, 50, 49), PackedInt32Array(64, 45, 16), PackedInt32Array(53, 52, 65, 66), PackedInt32Array(67, 68, 69, 70), PackedInt32Array(27, 69, 68, 71), PackedInt32Array(72, 67, 70, 73), PackedInt32Array(74, 75, 76, 77), PackedInt32Array(75, 74, 78, 79), PackedInt32Array(77, 76, 80, 81), PackedInt32Array(46, 47, 82), PackedInt32Array(58, 57, 83, 84), PackedInt32Array(85, 44, 4), PackedInt32Array(86, 13, 12), PackedInt32Array(59, 61, 87), PackedInt32Array(15, 62, 88), PackedInt32Array(89, 15, 88, 90), PackedInt32Array(89, 90, 66, 91), PackedInt32Array(92, 60, 59, 93), PackedInt32Array(94, 95, 48, 51, 96, 97), PackedInt32Array(66, 65, 98), PackedInt32Array(79, 78, 99, 100, 101), PackedInt32Array(102, 63, 49), PackedInt32Array(81, 80, 103), PackedInt32Array(104, 72, 73), PackedInt32Array(105, 54, 46, 106, 107), PackedInt32Array(108, 12, 26, 109, 110), PackedInt32Array(111, 64, 16), PackedInt32Array(73, 111, 16, 112, 113), PackedInt32Array(33, 36, 100, 99, 114, 115), PackedInt32Array(116, 32, 31, 117, 118, 119), PackedInt32Array(120, 121, 4, 7, 122, 84), PackedInt32Array(84, 83, 120), PackedInt32Array(121, 85, 4), PackedInt32Array(84, 122, 123), PackedInt32Array(84, 123, 95, 94), PackedInt32Array(124, 97, 96), PackedInt32Array(125, 124, 96), PackedInt32Array(79, 126, 125, 96, 127, 128), PackedInt32Array(46, 82, 106), PackedInt32Array(105, 107, 129), PackedInt32Array(105, 129, 130), PackedInt32Array(105, 130, 131), PackedInt32Array(114, 105, 131, 132, 133, 115), PackedInt32Array(108, 86, 12), PackedInt32Array(134, 110, 109), PackedInt32Array(135, 134, 109), PackedInt32Array(136, 135, 109), PackedInt32Array(92, 137, 136, 109, 118, 117), PackedInt32Array(43, 3, 2), PackedInt32Array(138, 43, 42), PackedInt32Array(132, 138, 42, 139), PackedInt32Array(132, 139, 133), PackedInt32Array(79, 101, 140), PackedInt32Array(79, 140, 126), PackedInt32Array(128, 127, 141, 142), PackedInt32Array(142, 141, 143, 144), PackedInt32Array(145, 144, 143, 146, 147), PackedInt32Array(59, 87, 93), PackedInt32Array(92, 93, 137), PackedInt32Array(116, 119, 148, 149), PackedInt32Array(149, 148, 150, 151), PackedInt32Array(151, 150, 152, 112, 153), PackedInt32Array(66, 98, 91), PackedInt32Array(89, 91, 81, 103, 154), PackedInt32Array(89, 154, 155), PackedInt32Array(89, 155, 156), PackedInt32Array(112, 89, 156, 157), PackedInt32Array(158, 112, 157, 144, 159), PackedInt32Array(27, 71, 28), PackedInt32Array(25, 28, 160), PackedInt32Array(25, 160, 161), PackedInt32Array(25, 161, 162, 163), PackedInt32Array(163, 162, 164, 165), PackedInt32Array(166, 165, 164, 167, 112), PackedInt32Array(113, 104, 73), PackedInt32Array(167, 113, 112), PackedInt32Array(168, 166, 112), PackedInt32Array(152, 168, 112), PackedInt32Array(158, 153, 112), PackedInt32Array(169, 159, 144), PackedInt32Array(145, 169, 144), PackedInt32Array(55, 147, 146, 170), PackedInt32Array(55, 170, 171), PackedInt32Array(55, 171, 56), PackedInt32Array(49, 56, 102)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-838, -439, -846, 1521, 2913, 1518, 2916, -449)])
 
 [node name="main" type="Node2D"]
 
@@ -15,8 +23,824 @@ position = Vector2(960, 540)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 
-[node name="enemy_spawner" parent="player/Camera2D" instance=ExtResource("2_ac8p2")]
-position = Vector2(-960, -540)
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_ojwdi")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(491, 215)
+radius = 62.5
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(-308, -140)
+radius = 62.5
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(-138, 570)
+radius = 62.5
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D4" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(-492, 709)
+radius = 84.56
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D5" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(1648, 337)
+radius = 121.32
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D6" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(593, 611)
+radius = 95.98
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D7" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(1767, 899)
+radius = 48.19
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D8" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(2490, 1241)
+radius = 66.57
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D9" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(774, 1260)
+radius = 66.57
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D10" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(2139, 71)
+radius = 66.57
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D11" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(1025, -129)
+radius = 66.57
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D13" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(-199, 1171)
+radius = 66.57
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D14" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(2471, 787)
+radius = 44.51
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D12" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+position = Vector2(2572, -157)
+radius = 88.63
+affect_navigation_mesh = true
+
+[node name="env" type="Node2D" parent="."]
+
+[node name="wall_l" type="Node2D" parent="env"]
+
+[node name="wall_up" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, -463.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up2" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, -358.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up3" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, -253.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up4" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, -148.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up5" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, -43.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up6" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 62.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up7" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 167.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up8" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 272.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up9" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 377.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up10" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 482.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up11" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 583.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up12" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 688.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up13" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 793.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up14" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 898.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up15" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 1003.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up16" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 1109.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up17" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 1214.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up18" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 1319.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up19" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 1424.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up20" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-936, 1529.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_corner" type="Sprite2D" parent="env/wall_l"]
+position = Vector2(-940, 1629)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(301.93, 533.06, 180.688, 230.362)
+
+[node name="wall_corner2" type="Sprite2D" parent="env/wall_l"]
+z_index = -1
+position = Vector2(-940, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(56.7445, 540.076, 158.182, 222.727)
+
+[node name="wall_r" type="Node2D" parent="env"]
+
+[node name="wall_up" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, -462.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up2" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, -357.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up3" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, -252.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up4" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, -147.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up5" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, -42.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up6" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 63.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up7" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 168.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up8" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 273.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up9" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 378.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up10" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 483.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up11" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 584.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up12" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 689.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up13" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 794.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up14" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 899.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up15" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 1004.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up16" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 1110.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up17" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 1215.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up18" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 1320.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up19" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 1425.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_up20" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3000.5, 1530.5)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(831.77, 549.086, 152.126, 209.25)
+
+[node name="wall_corner" type="Sprite2D" parent="env/wall_r"]
+position = Vector2(3001, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(574.727, 539.273, 154.545, 223.636)
+
+[node name="wall_corner2" type="Sprite2D" parent="env/wall_r"]
+z_index = -1
+position = Vector2(3003.5, -568)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(823.818, 284.728, 173.636, 230.909)
+
+[node name="wall_u" type="Node2D" parent="env"]
+
+[node name="wall" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(-810, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall2" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(-683, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall3" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(-556, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall4" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(-429, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall5" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(-302, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall6" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(-175, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall7" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(-48, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall8" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(79, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall9" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(206, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall10" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(333, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall11" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(460, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall12" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(587, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall13" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(714, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall14" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(841, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall15" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(968, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall16" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(1095, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall17" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(1222, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall18" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(1349, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall19" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(1476, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall20" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(1603, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall21" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(1730, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall22" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(1857, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall23" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(1984, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall24" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(2111, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall25" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(2238, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall26" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(2365, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall27" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(2492, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall28" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(2619, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall29" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(2746, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall30" type="Sprite2D" parent="env/wall_u"]
+position = Vector2(2873, -573)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall_d" type="Node2D" parent="env"]
+
+[node name="wall" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(-810, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall2" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(-683, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall3" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(-556, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall4" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(-429, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall5" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(-302, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall6" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(-175, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall7" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(-48, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall8" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(79, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall9" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(206, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall10" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(333, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall11" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(460, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall12" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(587, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall13" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(714, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall14" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(841, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall15" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(968, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall16" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(1095, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall17" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(1222, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall18" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(1349, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall19" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(1476, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall20" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(1603, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall21" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(1730, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall22" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(1857, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall23" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(1984, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall24" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(2111, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall25" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(2238, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall26" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(2365, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall27" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(2492, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall28" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(2619, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall29" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(2746, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="wall30" type="Sprite2D" parent="env/wall_d"]
+position = Vector2(2873, 1632)
+texture = ExtResource("3_k71ho")
+region_enabled = true
+region_rect = Rect2(61.5949, 801.026, 154.666, 212.807)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="env"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="env/StaticBody2D"]
+position = Vector2(-3, 3)
+polygon = PackedVector2Array(-996, -674, -999, 1726, 3067, 1726, 3067, -671, -873, -668, -867, -488, 2939, -476, 2942, 1537, -870, 1534, -867, -487, -874, -670)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="env"]
+layer = -10
+
+[node name="ColorRect" type="ColorRect" parent="env/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.296253, 0.673394, 0.483145, 1)
+
+[node name="rocks_trees" type="Node2D" parent="env"]
+
+[node name="tree" parent="env/rocks_trees" instance=ExtResource("4_4wica")]
+position = Vector2(1592, 283)
+
+[node name="tree4" parent="env/rocks_trees" instance=ExtResource("4_4wica")]
+position = Vector2(1688, 238)
+
+[node name="tree3" parent="env/rocks_trees" instance=ExtResource("4_4wica")]
+position = Vector2(1699, 326)
+
+[node name="tree6" parent="env/rocks_trees" instance=ExtResource("4_4wica")]
+position = Vector2(2468, 753)
+
+[node name="tree10" parent="env/rocks_trees" instance=ExtResource("4_4wica")]
+position = Vector2(482, 198)
+
+[node name="tree7" parent="env/rocks_trees" instance=ExtResource("4_4wica")]
+position = Vector2(-463, 649)
+
+[node name="tree8" parent="env/rocks_trees" instance=ExtResource("4_4wica")]
+position = Vector2(-522, 710)
+
+[node name="tree2" parent="env/rocks_trees" instance=ExtResource("5_nea0p")]
+position = Vector2(1615, 393)
+
+[node name="tree5" parent="env/rocks_trees" instance=ExtResource("5_nea0p")]
+position = Vector2(1765, 882)
+
+[node name="tree11" parent="env/rocks_trees" instance=ExtResource("5_nea0p")]
+position = Vector2(2600, -226)
+
+[node name="tree12" parent="env/rocks_trees" instance=ExtResource("5_nea0p")]
+position = Vector2(2536, -178)
+
+[node name="tree13" parent="env/rocks_trees" instance=ExtResource("5_nea0p")]
+position = Vector2(2624, -165)
+
+[node name="tree9" parent="env/rocks_trees" instance=ExtResource("5_nea0p")]
+position = Vector2(-125, 535)
+
+[node name="rock" parent="env/rocks_trees" instance=ExtResource("6_mspxi")]
+position = Vector2(610, 560)
+
+[node name="rock2" parent="env/rocks_trees" instance=ExtResource("7_owhcd")]
+position = Vector2(-312, -150)
+
+[node name="rock6" parent="env/rocks_trees" instance=ExtResource("7_owhcd")]
+position = Vector2(2486, 1230)
+
+[node name="rock3" parent="env/rocks_trees" instance=ExtResource("7_owhcd")]
+position = Vector2(1026, -142)
+
+[node name="rock5" parent="env/rocks_trees" instance=ExtResource("7_owhcd")]
+position = Vector2(772, 1249)
+
+[node name="rock4" parent="env/rocks_trees" instance=ExtResource("7_owhcd")]
+position = Vector2(2134, 61)
+
+[node name="log" parent="env/rocks_trees" instance=ExtResource("8_ybb6a")]
+position = Vector2(581, 679)
+
+[node name="log4" parent="env/rocks_trees" instance=ExtResource("8_ybb6a")]
+position = Vector2(2543, -96.9999)
+rotation = 0.494844
+
+[node name="log2" parent="env/rocks_trees" instance=ExtResource("8_ybb6a")]
+position = Vector2(-191, 1170)
+
+[node name="log3" parent="env/rocks_trees" instance=ExtResource("8_ybb6a")]
+position = Vector2(-135, 607)
+
+[node name="enemy_spawner" parent="." instance=ExtResource("2_ac8p2")]
+
+[node name="health_pickup" parent="." instance=ExtResource("9_ul7s3")]
+position = Vector2(-626, 1366)
+
+[node name="health_pickup2" parent="." instance=ExtResource("9_ul7s3")]
+position = Vector2(-626, -353)
+
+[node name="health_pickup3" parent="." instance=ExtResource("9_ul7s3")]
+position = Vector2(2761, -345)
+
+[node name="health_pickup4" parent="." instance=ExtResource("9_ul7s3")]
+position = Vector2(2761, 1414)
+
+[node name="health_pickup5" parent="." instance=ExtResource("9_ul7s3")]
+position = Vector2(1017, 1429)
+
+[node name="health_pickup6" parent="." instance=ExtResource("9_ul7s3")]
+position = Vector2(1009, -360)
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_nx0nh")
+autoplay = true

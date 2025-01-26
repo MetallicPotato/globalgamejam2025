@@ -5,9 +5,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_qea2e"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -83, -75, 0, 0, 0, 0, -85, 1139, 0, 0, 0, 0, 1977, 1143, 0, 0, 0, 0, 1973, -79, 0, 0, 0, 0, -83, -75)
+"points": PackedVector2Array(0, 0, 0, 0, -374.944, -199.624, 0, 0, 0, 0, -388.054, 1262.84, 0, 0, 0, 0, 2354.08, 1278.6, 0, 0, 0, 0, 2394.95, 1278.6, 0, 0, 0, 0, 2392.64, -195.682, 0, 0, 0, 0, -351.039, -199.624)
 }
-point_count = 5
+point_count = 6
 
 [node name="enemy_spawner" type="Node2D"]
 script = ExtResource("1_hln31")
@@ -19,8 +19,8 @@ scale = Vector2(1.2968, 1.26841)
 curve = SubResource("Curve2D_qea2e")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-83, -75)
-rotation = 1.57244
+position = Vector2(-374.944, -199.624)
+rotation = 1.57976
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 2.0

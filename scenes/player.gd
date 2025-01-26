@@ -10,13 +10,19 @@ extends CharacterBody2D
 @onready var health_component = $HealthComponent
 @onready var health_bar = $CanvasLayer/HealthBar
 @onready var anim_sprite = $AnimatedSprite2D
+@onready var number_label = $CanvasLayer/NumberLabel
+@onready var parry_sound = $parry_sound
+@onready var shield_sound = $shield_sound
 
 var shielded: bool = false
 var canParry: bool = false
 var parries_in_a_row: int = 0
+var currenttrail: Trail
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Scoremanager.OnRemove.connect(on_enemy_removed)
+	number_label.text = str(Scoremanager.remaining_enemies)
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("shield"):
@@ -88,13 +94,25 @@ func _on_shield_parry_timer_timeout():
 func parry():
 	if speed_timer.is_stopped():
 		speed *= 3
+		make_trail()
 		speed_timer.start()
 	parries_in_a_row += 1
+	parry_sound.play()
 	if parries_in_a_row >= 3:
 		print("3 in a row!")
 
 func noparry():
+	shield_sound.play()
 	parries_in_a_row = 0
 
 func _on_speed_boost_timer_timeout():
 	speed /= 3
+	if currenttrail:
+		currenttrail.stop()
+
+func make_trail() -> void:
+		currenttrail = Trail.create()
+		add_child(currenttrail)
+
+func on_enemy_removed():
+	number_label.text = str(Scoremanager.remaining_enemies)

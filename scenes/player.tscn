@@ -1,10 +1,12 @@
-[gd_scene load_steps=58 format=3 uid="uid://dptslkx5dyuwg"]
+[gd_scene load_steps=60 format=3 uid="uid://dptslkx5dyuwg"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_8hjwu"]
 [ext_resource type="Texture2D" uid="uid://c5xtdhl65bexv" path="res://assets/player_idle_spritesheet.png" id="2_na5cs"]
 [ext_resource type="Texture2D" uid="uid://btjvhs2xjrvhr" path="res://assets/hole_start.png" id="3_f1b1g"]
 [ext_resource type="Texture2D" uid="uid://x2s4m38u5f4g" path="res://assets/player_run_spritesheet.png" id="3_jngsv"]
 [ext_resource type="Script" path="res://scenes/health_component.gd" id="4_52g14"]
+[ext_resource type="AudioStream" uid="uid://bbgoxsybo3lr5" path="res://assets/sounds/parry.wav" id="6_dcmto"]
+[ext_resource type="AudioStream" uid="uid://cmh774ajj1b7q" path="res://assets/sounds/shield_absorb.wav" id="7_nrovq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tp6w"]
 atlas = ExtResource("2_na5cs")
@@ -464,6 +466,36 @@ theme_override_styles/background = SubResource("StyleBoxFlat_nuxfs")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4dd68")
 value = 100.0
 show_percentage = false
+
+[node name="RemainingLabel" type="Label" parent="CanvasLayer"]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 253.0
+offset_bottom = 144.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "Remaining:
+"
+horizontal_alignment = 1
+
+[node name="NumberLabel" type="Label" parent="CanvasLayer"]
+offset_left = 194.0
+offset_top = 50.0
+offset_right = 397.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(1, 0.43122, 0.36253, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "50
+"
+horizontal_alignment = 1
+
+[node name="parry_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dcmto")
+volume_db = -2.0
+
+[node name="shield_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_nrovq")
 
 [connection signal="HealthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]
 [connection signal="OutOfHealth" from="HealthComponent" to="." method="_on_health_component_out_of_health"]

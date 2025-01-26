@@ -8,6 +8,7 @@ const SPEED = 220.0
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("PLAYER")
 @onready var projectile_cooldown = $ProjectileCooldown
 @onready var animation_sprite = $AnimatedSprite2D
+@onready var projectile_sound = $projectile_sound
 
 var canShoot: bool = true
 var shouldMove: bool = true
@@ -24,6 +25,7 @@ func _physics_process(_delta):
 				p.position = (pdirection * 75) + global_position
 				p.set_direction(pdirection)
 				animation_sprite.play("cast_d")
+				projectile_sound.play()
 			else:
 				animation_sprite.play("idle_d")
 		else:

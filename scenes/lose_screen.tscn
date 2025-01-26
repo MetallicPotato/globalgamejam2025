@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c44ktnnr2nfyb"]
+[gd_scene load_steps=7 format=3 uid="uid://c44ktnnr2nfyb"]
 
 [ext_resource type="Script" path="res://scenes/lose_screen.gd" id="1_qhbpw"]
 [ext_resource type="PackedScene" uid="uid://bav58jm6ngufw" path="res://scenes/main.tscn" id="2_r7ilp"]
+[ext_resource type="AudioStream" uid="uid://cmgudx1dra80j" path="res://assets/sounds/losing.wav" id="3_6qpl5"]
+[ext_resource type="AudioStream" uid="uid://bbu7kgj226pin" path="res://assets/sounds/clickbutton2.wav" id="4_kuyce"]
 
 [sub_resource type="Gradient" id="Gradient_xiomk"]
 interpolation_mode = 2
@@ -62,5 +64,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_jjnet")
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6qpl5")
+volume_db = -15.0
+autoplay = true
+
+[node name="button_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kuyce")
+volume_db = -15.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

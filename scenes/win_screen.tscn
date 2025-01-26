@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://djba6myt20u4q"]
+[gd_scene load_steps=7 format=3 uid="uid://djba6myt20u4q"]
 
 [ext_resource type="Script" path="res://scenes/win_screen.gd" id="1_f1omm"]
 [ext_resource type="PackedScene" uid="uid://bav58jm6ngufw" path="res://scenes/main.tscn" id="2_0mj8j"]
+[ext_resource type="AudioStream" uid="uid://bdrbq5vwjqf31" path="res://assets/sounds/winning.wav" id="3_fblre"]
+[ext_resource type="AudioStream" uid="uid://bbu7kgj226pin" path="res://assets/sounds/clickbutton2.wav" id="4_ajc08"]
 
 [sub_resource type="Gradient" id="Gradient_xiomk"]
 interpolation_mode = 2
@@ -79,5 +81,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_jjnet")
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fblre")
+volume_db = -15.0
+autoplay = true
+
+[node name="button_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ajc08")
+volume_db = -15.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

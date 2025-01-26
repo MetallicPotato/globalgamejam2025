@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://byi7fd2uadkbx"]
+[gd_scene load_steps=92 format=3 uid="uid://byi7fd2uadkbx"]
 
 [ext_resource type="Script" path="res://scenes/enemy.gd" id="1_2b6ml"]
 [ext_resource type="PackedScene" uid="uid://cbab2xbc45k3r" path="res://scenes/projectile.tscn" id="2_vv3do"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://scenes/health_component.gd" id="3_60n30"]
 [ext_resource type="Texture2D" uid="uid://c4sswbdcm4h8c" path="res://assets/enemy_idle_spritesheet.png" id="4_lt5aw"]
 [ext_resource type="Texture2D" uid="uid://tml88q0bswry" path="res://assets/enemy_walk_spritesheet.png" id="5_cvhwf"]
+[ext_resource type="AudioStream" uid="uid://bxyosvpq8ylce" path="res://assets/sounds/fireball_02.wav" id="7_u6j56"]
+[ext_resource type="AudioStream" uid="uid://binngfm201kja" path="res://assets/sounds/fireball_03.wav" id="8_vkfyb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5pbqn"]
 atlas = ExtResource("3_6hdhh")
@@ -634,6 +636,12 @@ animations = [{
 radius = 32.0
 height = 80.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lvapr"]
+random_pitch = 2.0
+streams_count = 2
+stream_0/stream = ExtResource("7_u6j56")
+stream_1/stream = ExtResource("8_vkfyb")
+
 [node name="enemy" type="CharacterBody2D" groups=["ENEMY"]]
 script = ExtResource("1_2b6ml")
 Projectile = ExtResource("2_vv3do")
@@ -656,5 +664,9 @@ MaxHealth = 10.0
 [node name="ProjectileCooldown" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="projectile_sound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_lvapr")
+volume_db = -8.0
 
 [connection signal="OutOfHealth" from="HealthComponent" to="." method="_on_health_component_out_of_health"]
