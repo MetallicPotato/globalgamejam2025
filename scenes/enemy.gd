@@ -7,6 +7,7 @@ const SPEED = 220.0
 @onready var nav = $NavigationAgent2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("PLAYER")
 @onready var projectile_cooldown = $ProjectileCooldown
+@onready var animation_sprite = $AnimatedSprite2D
 
 var canShoot: bool = true
 var shouldMove: bool = true
@@ -22,6 +23,9 @@ func _physics_process(_delta):
 				var pdirection = (global_position - player.global_position).normalized() * -1
 				p.position = (pdirection * 75) + global_position
 				p.set_direction(pdirection)
+				animation_sprite.play("cast_d")
+			else:
+				animation_sprite.play("idle_d")
 		else:
 			shouldMove = true
 			
@@ -29,6 +33,7 @@ func _physics_process(_delta):
 			nav.target_position = player.global_position
 			var direction = nav.get_next_path_position() - global_position
 			direction = direction.normalized()
+			handle_walk_animation(direction)
 			velocity = direction * SPEED
 			move_and_slide()
 	else:
@@ -37,3 +42,6 @@ func _physics_process(_delta):
 func _on_health_component_out_of_health():
 	Scoremanager.remove_enemy()
 	queue_free()
+
+func handle_walk_animation(direction: Vector2):
+	animation_sprite.play("walk_d")

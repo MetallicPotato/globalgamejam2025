@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var shield_cooldown = $ShieldCooldownTimer
 @onready var health_component = $HealthComponent
 @onready var health_bar = $CanvasLayer/HealthBar
+@onready var anim_sprite = $AnimatedSprite2D
 
 var shielded: bool = false
 var canParry: bool = false
@@ -25,21 +26,50 @@ func _physics_process(_delta):
 	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * speed
+	handle_animation(direction)
 	
 	move_and_slide()
 
 func handle_shield(active: bool):
 	if active and shield_cooldown.is_stopped():
 		shield_sprite.visible = true
-		collision_shape.shape.radius = 62.0
+		collision_shape.shape.radius = 58.0
+		collision_shape.shape.height = 122.0
 		shielded = true
 		shield_timer.start()
 		canParry = true
 		shield_cooldown.start()
 	else:
 		shield_sprite.visible = false
-		collision_shape.shape.radius = 38.0
+		collision_shape.shape.radius = 15.0
+		collision_shape.shape.height = 70.0
 		shielded = false
+
+func handle_animation(direction: Vector2):
+	if velocity.length() < 5:
+		if direction.y < -0.3:
+			anim_sprite.play("idle_u")
+		elif direction.y > 0.3:
+			anim_sprite.play("idle_d")
+		else:
+			if direction.x < -0.3:
+				anim_sprite.play("idle_l")
+			elif direction.x > 0.3:
+				anim_sprite.play("idle_r")
+			else:
+				anim_sprite.play("idle_d")
+	else:
+		if direction.y < -0.3:
+			anim_sprite.play("run_u")
+		elif direction.y > 0.3:
+			anim_sprite.play("run_d")
+		else:
+			if direction.x < -0.3:
+				anim_sprite.play("run_l")
+			elif direction.x > 0.3:
+				anim_sprite.play("run_r")
+			else:
+				anim_sprite.play("run_d")
 
 func _on_health_component_health_changed(newhealth):
 	print(newhealth)
