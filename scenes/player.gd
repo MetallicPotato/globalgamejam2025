@@ -26,6 +26,7 @@ var currenttrail: Trail
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Scoremanager.OnRemove.connect(on_enemy_removed)
+	Scoremanager.OnWin.connect(on_win)
 	number_label.text = str(Scoremanager.remaining_enemies)
 	parry_sprite.visible = false
 
@@ -123,3 +124,6 @@ func make_trail() -> void:
 
 func on_enemy_removed():
 	number_label.text = str(Scoremanager.remaining_enemies)
+
+func on_win():
+	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
